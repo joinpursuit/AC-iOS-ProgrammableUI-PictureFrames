@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // setup view hierarchy
         let viewController = Exercise1ViewController()
+        let navController = UINavigationController(rootViewController: viewController)
         
         // setup UIWindow
         
@@ -26,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         // 2) initial view controller
-        window?.rootViewController = viewController
+        window?.rootViewController = navController
         
         // 3) set to main window and make it visible on screen
         window?.makeKeyAndVisible()

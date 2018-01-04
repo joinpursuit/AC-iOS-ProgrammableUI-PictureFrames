@@ -10,7 +10,17 @@ import UIKit
 
 class Exercise1View: UIView {
     
-    // four custom views
+    let topStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.distribution = .fillEqually
+        return stackView
+    }()
+    
+    let bottomStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.distribution = .fillEqually
+        return stackView
+    }()
     
     lazy var pitonView: CustomView = {
         let view = CustomView(image: #imageLiteral(resourceName: "pitons"),
@@ -60,46 +70,31 @@ class Exercise1View: UIView {
     }
     
     private func setupViews() {
-        setupPitonView()
-        setupDragonView()
-        setupMonkeyView()
-        setupHeartView()
+        setupTopStackView()
+        setupBottomStackView()
     }
     
-    private func setupPitonView() {
-        addSubview(pitonView)
-        pitonView.translatesAutoresizingMaskIntoConstraints = false
-        pitonView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        pitonView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        pitonView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.50).isActive = true
-        pitonView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.50).isActive = true
+    private func setupTopStackView() {
+        addSubview(topStackView)
+        topStackView.translatesAutoresizingMaskIntoConstraints = false
+        topStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
+        topStackView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        topStackView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        topStackView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.50).isActive = true
+        topStackView.addArrangedSubview(pitonView)
+        topStackView.addArrangedSubview(monkeyView)
+        NSLayoutConstraint.activate(topStackView.constraints)
+
     }
     
-    private func setupDragonView() {
-        addSubview(dragonView)
-        dragonView.translatesAutoresizingMaskIntoConstraints = false
-        dragonView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.50).isActive = true
-        dragonView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.50).isActive = true
-        dragonView.leadingAnchor.constraint(equalTo: pitonView.trailingAnchor).isActive = true
-        dragonView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-    }
-        
-    private func setupMonkeyView() {
-        addSubview(monkeyView)
-        monkeyView.translatesAutoresizingMaskIntoConstraints = false
-        monkeyView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.50).isActive = true
-        monkeyView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.50).isActive = true
-        monkeyView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        monkeyView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-    }
-
-    private func setupHeartView() {
-        addSubview(heartView)
-        heartView.translatesAutoresizingMaskIntoConstraints = false
-        heartView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.50).isActive = true
-        heartView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.50).isActive = true
-        heartView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        heartView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-    }
-
+    private func setupBottomStackView() {
+        addSubview(bottomStackView)
+        bottomStackView.translatesAutoresizingMaskIntoConstraints = false
+        bottomStackView.topAnchor.constraint(equalTo: topStackView.bottomAnchor).isActive = true
+        bottomStackView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        bottomStackView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        bottomStackView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.50).isActive = true
+        bottomStackView.addArrangedSubview(dragonView)
+        bottomStackView.addArrangedSubview(heartView)
+    }    
 }
