@@ -9,16 +9,9 @@
 import UIKit
 
 class Exercise1ViewController: UIViewController {
-    
-    let customView = CustomView(image: #imageLiteral(resourceName: "pitons"),
-                                text: "Beautiful Saint Lucia",
-                                backgroundColor: .orange,
-                                textColor: .white)
-
+    let exercise1View = Exercise1View()
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .yellow
-        view.addSubview(customView)
+        view.addSubview(exercise1View)
     }
-
 }

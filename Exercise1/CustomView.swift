@@ -66,8 +66,8 @@ class CustomView: UIView {
         addSubview(containerView)
         containerView.translatesAutoresizingMaskIntoConstraints = false
         containerView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.75).isActive = true
-        containerView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
-        containerView.rightAnchor.constraint(equalTo: rightAnchor, constant: -16).isActive = true
+        containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
+        containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
         containerView.topAnchor.constraint(equalTo: topAnchor, constant: 16).isActive = true
     }
     
@@ -82,8 +82,8 @@ class CustomView: UIView {
         addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
-        imageView.leftAnchor.constraint(equalTo: containerView.leftAnchor).isActive = true
-        imageView.rightAnchor.constraint(equalTo: containerView.rightAnchor).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
+        imageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
         imageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
     }
 
