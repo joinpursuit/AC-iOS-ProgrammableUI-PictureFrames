@@ -4,13 +4,13 @@
 Lays out the Picture Frames individually
 
 ## stackview Branch 
-Lays out hte Pictures Frames using StackView - a Top and Bottom StackView
-For the curious. You can switch from the default ```master``` branch to the ```stackview``` branch as follows:  
+Lays out the Pictures Frames using StackView - a Top and Bottom StackView  
+For the curious, you can switch from the default ```master``` git branch to the ```stackview``` branch as follows:  
 ```
 $ git checkout stackview 
 ```
 
-To get back to the master branch do the following in terminal 
+To get back to the master branch type out the following in the terminal window
 ```
 $ git checkout master 
 ```
