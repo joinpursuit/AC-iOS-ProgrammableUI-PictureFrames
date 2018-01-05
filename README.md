@@ -9,3 +9,8 @@ For the curious. You can switch from the default ```master``` branch to the ```s
 ```
 $ git checkout stackview 
 ```
+
+To get back to the master branch do the following in terminal 
+```
+$ git checkout master 
+```
