@@ -70,24 +70,24 @@ class Exercise1View: UIView {
         addSubview(pitonView)
         pitonView.translatesAutoresizingMaskIntoConstraints = false
         pitonView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        pitonView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        pitonView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.50).isActive = true
+        pitonView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
+        pitonView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.50).isActive = true
         pitonView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.50).isActive = true
     }
     
     private func setupDragonView() {
         addSubview(dragonView)
         dragonView.translatesAutoresizingMaskIntoConstraints = false
-        dragonView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.50).isActive = true
+        dragonView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.50).isActive = true
         dragonView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.50).isActive = true
         dragonView.leadingAnchor.constraint(equalTo: pitonView.trailingAnchor).isActive = true
-        dragonView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        dragonView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
     }
         
     private func setupMonkeyView() {
         addSubview(monkeyView)
         monkeyView.translatesAutoresizingMaskIntoConstraints = false
-        monkeyView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.50).isActive = true
+        monkeyView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.50).isActive = true
         monkeyView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.50).isActive = true
         monkeyView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         monkeyView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
@@ -96,7 +96,7 @@ class Exercise1View: UIView {
     private func setupHeartView() {
         addSubview(heartView)
         heartView.translatesAutoresizingMaskIntoConstraints = false
-        heartView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.50).isActive = true
+        heartView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.50).isActive = true
         heartView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.50).isActive = true
         heartView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         heartView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true

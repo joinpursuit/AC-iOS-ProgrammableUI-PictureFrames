@@ -13,5 +13,6 @@ class Exercise1ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(exercise1View)
+        navigationItem.title = "Picture Frames"
     }
 }
